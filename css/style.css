@@ -1,0 +1,576 @@
+/* 
+Project Name: Kaz n Kazoo
+Client: GA
+Author: Kazu
+*/
+
+
+/******************************************
+/* SETUP                   
+/*******************************************/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+.alignright {
+	float: right; 
+	padding: 0 0 10px 10px; /* note the padding around a right floated image */
+}
+
+.alignleft {
+	float: left; 
+	padding: 0 10px 10px 0; /* note the padding around a left floated image */
+}
+
+/******************************************
+/* BASE STYLES                   
+/*******************************************/
+
+body {
+     color: #000;
+     font-size: 1em;
+     line-height: 1.6;
+     font-family: Helvetica, Arial, sans-serif;
+}
+
+
+/******************************************
+/* LAYOUT                   
+/*******************************************/
+
+header {
+     height: 50px;
+     background: rgba(51,51,51,0.7);
+     box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+     position: fixed;
+     width: 100%;
+     z-index: 10;     
+}
+
+#header-content {
+     width: 80%;
+     max-width: 1100px;
+     margin: 0 auto;
+     overflow: hidden;
+}
+     #header-content h1 {
+          float: left;
+          margin-top: 5px;
+          font-size: 1.6em;
+     }
+
+     #header-content h1 a {
+          text-decoration: none;
+          color: #FFFFFF;
+          font-family: 'Futura', sans-serif;
+          font-weight: normal;
+     }
+
+     #header-content ul {
+          margin-top: 12px;
+
+     }
+
+     #header-content ul li {
+          float: left;
+          margin-left: 50px;
+          font-size: 1.2em;
+     }
+
+#nav {
+     float: right;
+}
+
+     #nav ul li {
+          list-style: none;
+     }
+
+     #nav ul li a {
+          font-family: 'Futura', sans-serif;
+          text-decoration: none;
+          color: #FFFFFF;
+     }
+
+     #nav ul li a:hover {
+          color: #3E6B85;
+     }
+
+     .mobile {
+          display: none;
+     }
+
+#banner {
+     width: 100%;
+     height: 500px;
+     position: relative;
+     margin: 0 auto;
+     background-size: cover;
+}
+     .banner-bg-main {
+          background: url(../images/slideshow_about/shokunin5.jpg);
+     }
+
+     .banner-bg-tenugui {
+          background: url(../images/tenugui_banner1.jpg);
+     }
+
+     .banner-content {
+          display: block;
+          width: 80%;
+          max-width: 1100px;
+          padding-top: 80px;
+          margin: 0 auto;
+          font-family: 'Raleway', Helvetica, sans-serif;
+          font-weight: 100;
+          color: #ffffff;
+          /*text-align: center;*/
+     }
+
+     .banner-content a {
+          color: #FFFFFF;
+          text-decoration: none;
+     }
+
+     .banner-content a:hover {
+          color: #3E6B85;
+     }
+
+     .banner-content h1.banner-site {
+          font-family: Helvetica, sans-serif;
+          font-size: 6em;
+          line-height: 0.2;
+     }
+
+     .banner-content h1.banner-issue {
+          /*width: 420px;*/
+          padding-bottom: 20px;
+          margin: 0 auto;
+          border-bottom: 1px solid #ffffff;
+          font-size: 1.6em;
+     }
+
+     .banner-content h1.banner-title {
+          line-height: 0;
+          font-size: 10em;
+          padding-bottom: 80px;
+          font-weight: 200;
+     }
+
+
+
+
+#content {
+     width: 100%;
+     padding: 30px 70px 0 70px;
+     background: url(../images/debut_light.png);
+     float: left;   
+}
+
+     .blockquote {
+          margin: 100px auto;
+          padding: 0 20%;
+          /*box-shadow: 0 5px 10px rgba(0,0,0,0.5);*/
+     }
+
+     .blockquote h2 {
+          font-family: 'Raleway', Helvetica, sans-serif;
+          font-size: 1.4em;
+          font-style: italic;
+          text-transform: uppercase;;
+          text-align: center;
+     }
+
+
+
+article {
+     width: 90%;
+     margin: 0 auto;
+     padding: 30px 70px 50px 70px;
+     background: #ffffff;
+}
+
+     article p {
+          margin-bottom: 35px;
+          font-size: 1.2em;
+          color: #333333;
+          text-align: center;
+     }
+
+     article h2 {
+          color: #3E6B85;
+          font-size: 2em;
+          font-family: Helvetica, sans-serif;
+          text-align: center;
+          text-transform: uppercase;
+     }
+
+     article img {
+          display: block;
+          width: 100%;
+          margin: 0 auto 40px auto;
+          /*box-shadow: 0 5px 10px rgba(0,0,0,0.5);*/
+     }
+
+
+#monthly-issues {
+     width: 100%;
+     max-width: 1100px;
+     margin: 0 auto;
+     overflow: hidden;
+}
+
+#monthly-issues h2 {
+     padding-top: 30px;
+     color: #3E6B85;
+     font-size: 2em;
+     font-family: Helvetica, sans-serif;
+     text-align: center;
+     text-transform: uppercase;
+}
+
+.single-column {
+     float: left;
+     width: 33.33%;
+     margin: 0 auto;
+     padding: 20px;
+}
+
+     .single-column h3 {
+          font-size: 1.2em;
+          line-height: 0.5em;
+          font-weight: normal;
+          text-align: center;
+          /*text-decoration: underline;*/
+     }
+
+     .single-column img {
+          display: block;
+          margin: 0 auto;
+          opacity: 0.4;
+          -webkit-transition: opacity 0.3s ease-in-out;
+          -moz-transition: opacity 0.3s ease-in-out;
+          transition: opacity 0.3s ease-in-out;
+     }
+
+     .single-column img:hover {
+          opacity: 1;
+     }
+
+.coming-soon {
+     font-style: italic;
+     color: #999999;
+}
+
+     .coming-soon img:hover {
+          opacity: 0.4;
+     }
+
+
+
+#contact {
+     display: block;
+     width: 600px;
+     margin: 0 auto 150px auto;
+     padding: 0;
+}
+
+     #contact h2 {
+          color: #3E6B85;
+          font-size: 2em;
+          font-family: Helvetica, sans-serif;
+          text-align: center;
+          text-transform: uppercase;
+     }
+
+     #contact form ul li {
+          display: block;
+          margin: 0 auto 20px auto;
+          padding:0;
+          list-style: none;
+          overflow: hidden;
+     }
+
+
+     #contact form ul li label {
+          display: block;
+          font-size: 1.2em;
+          margin-bottom: 5px;
+          float: left;
+          width: 100px;
+     }
+
+
+     #contact form ul li input.text, form ul li textarea {
+          padding: 5px;
+          background: #EEEEEE;
+          border: 3px solid #FFFFFF;
+          border-radius: 5px;
+          width: 400px;
+          height: 35px;
+          /*font-size: 1.2em;*/
+     }
+
+     #contact form ul li textarea {
+          height: 200px;
+     }
+
+     #submit-btn {
+          width: 200px;
+          margin-left: 200px;
+          padding: 10px 40px;
+          background-color: #3E6B85;
+          outline: none;
+          border: 3px solid #FFFFFF;
+          border-radius: 5px;
+          font-size: 1.4em;
+          font-family: Helvetica, sans-serif;
+          color: white;
+          cursor: pointer;
+     }
+
+
+
+
+footer {
+     width: 100%;
+     height: 80px;
+     background-color: #333333; 
+}
+
+     #footer-content {
+          width: 80%;
+          max-width: 1100px;
+          margin: 0 auto;
+     }
+
+     #copyright {
+          float: left;
+          padding-top: 10px;
+          font-size: 1em;
+          color: #666666;
+     }
+
+     #social-media ul li {
+          float: right;   
+          margin: 10px 5px;
+     }
+               
+          #social-media ul li a {
+               display: block;
+               text-indent: -9999px;
+               background: no-repeat;
+               width: 33px;
+               height: 28px;
+               background: url(../images/social.png);
+          }
+
+          #social-media ul li.twitter a {
+               background-position: -1px -1px;
+          }
+
+          #social-media ul li.facebook a {
+               background-position: -32px -1px;
+          }
+
+          #social-media ul li a:hover {
+               background-position-y: -30px;
+          }
+
+/******************************************
+/*  FANCYBOX        
+/*******************************************/
+
+.fancybox-wrapper {
+     width: 100%;
+}
+
+.fancybox-wrapper img {
+     float: left;
+     width: 20%;
+}
+/******************************************
+/*  RESPONSIVE DESIGN             
+/*******************************************/
+
+@media only screen and (min-width: 340px) and (max-width: 480px) {
+     header {
+          height: 150px;
+          position: relative;
+          background: #333333;
+     }
+
+     .non-mobile {
+          display: none;
+     }
+
+     .mobile {
+          display: block;
+     }
+
+     #nav {
+          width: 200px;
+     }
+
+     #nav ul li a {
+          width: 100%;
+          font-size: 1em;
+     }
+
+
+     #content {
+          width: 100%;
+          padding: 0;
+     }
+
+     #banner {
+          height: 300px;
+     }
+
+          .banner-content h1.banner-site {
+               font-family: Helvetica, sans-serif;
+               font-size: 3em;
+               line-height: 0.2;
+          }
+
+          .banner-content {
+               padding-top: 80px;
+          }
+
+     #monthly-issues h2 {
+          font-size: 1.6em;
+     }
+
+     .single-column {
+          width: 100%;
+     }
+
+          .single-column h3 {
+               font-size: 1em;
+          }
+     
+     article {
+          width: 100%;
+     }
+
+          article p {
+               font-size: 1em;
+          }
+
+          article h2 {
+               font-size: 1.6em;
+          }
+     
+     .blockquote h2 {
+          font-size: 1em;
+     }
+
+     #contact {
+          width: 80%;
+     }
+          
+          #contact h2 {
+               font-size: 1.6em;
+          }
+
+          #contact form ul li {
+               margin: 0;
+          }
+          #contact form ul li label {
+               font-size: 1em;
+          }
+
+          #contact form ul li input.text, form ul li textarea {
+               width: 250px;
+          }
+
+          #submit-btn {
+               float: left;
+               margin-left: 20%;
+          }
+
+}
+
+@media only screen and (min-width: 481px) and (max-width: 800px) {
+     .non-mobile {
+          display: none;
+     }
+
+     .mobile {
+          display: block;
+     }
+
+
+     #nav ul li {
+          font-size: 1em;
+          margin-left: 15px;
+     }
+
+     #content {
+          width: 100%;
+          padding: 0;
+     }
+
+     #banner {
+          height: 400px;
+     }
+
+          .banner-content h1.banner-site {
+               font-family: Helvetica, sans-serif;
+               font-size: 4em;
+               line-height: 0.2;
+          }     
+
+          .banner-content {
+               padding-top: 100px;
+          }
+
+     .single-column {
+          width: 100%;
+     }
+
+     article {
+          width: 100%;
+     }
+     
+     #contact {
+          width: 80%;
+     }
+     
+     #submit-btn {
+          float: left;
+          margin-left: 30%;
+     }
+}
+
+@media only screen and (min-width: 801px) and (max-width: 1100px) {\
+     #content {
+          width: 100%;
+          padding: 0;
+     }
+
+     .single-column {
+          width: 50%;
+     }
+}
+
+
+
+
